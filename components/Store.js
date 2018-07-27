@@ -1,7 +1,15 @@
-import { observable } from "mobx";
+import { observable, action } from "mobx";
 import { observer } from "mobx-react";
 
-@observer
 class Store {
-  @observable userData = [];
+  @observable userName = "Vaibhav";
+
+  @action
+  changeName = name => {
+    this.userName = name;
+  };
 }
+
+const store = new Store();
+
+export default store;
