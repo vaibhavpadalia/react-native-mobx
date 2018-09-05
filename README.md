@@ -19,8 +19,23 @@ Now update the <b>.babelrc</b>: <br>
   "plugins": ["transform-decorators-legacy"]
 }`
 
+If you are using any version >=0.56 of react native then there are some changes for it. Install `@babel/plugin-proposal-decorators` instead of `babel-plugin-transform-decorators-legacy`. And then change the configuration of <b>.babelrc</b> with the following lines: <br>
+
+`{
+  "presets": ["react-native"],
+  "plugins": [
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ]
+  ]
+}`
+
+
 There are two ways to use Mobx:
-* Pass it down via Provider
+* Pass it down via Provider.
 * Create a store and import it in the components where it is required.
 
 In the first method the global state variables will be accessible with the help of props.
