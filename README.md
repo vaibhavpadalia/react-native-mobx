@@ -46,4 +46,12 @@ Eg:  <br>
     `<ChildComponent />`<br>
 `</Provider>`
 
+Then make the class `@observer` where this store is to be accessed and the value of the store will be present inside the `props`, i.e. `this.props.store.property`
+
+The second way is way simpler than the first. You simply have to import the store and then you can simply access it using the import like: <br>
+
+`import { store } from "somestore"`
+
+And then use the properties of the store using: `store.property`.
+
 
